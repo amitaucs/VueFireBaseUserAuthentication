@@ -4,6 +4,7 @@ import axios from "./axios-auth.js"
 import globalAxios from 'axios'
 import router from './router'
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -38,7 +39,7 @@ export default new Vuex.Store({
         },
 
         signup({commit,dispatch}, authData) {
-            axios.post('/accounts:signUp?key=key need to pass', {
+            axios.post('/accounts:signUp?key=', {
                 email: authData.email,
                 password: authData.password,
                 returnSecureToken: true
@@ -55,7 +56,7 @@ export default new Vuex.Store({
                     localStorage.setItem('token',res.data.idToken)
                     localStorage.setItem('userId', res.data.localId)
                     localStorage.setItem('expirationDate', expirationDate)
-                    //storing user data to firebase DB after login
+                    //storing user data to firebase DB after signup
                     dispatch('storeUser',authData)
                     dispatch('setLogoutTimer',res.data.expiresIn)
                     router.replace('/dashboard')
@@ -64,7 +65,7 @@ export default new Vuex.Store({
         },
 
         login({commit, dispatch}, authData) {
-            axios.post('/accounts:signInWithPassword?key=key need to pass', {
+            axios.post('/accounts:signInWithPassword?key=', {
                 email: authData.email,
                 password: authData.password,
                 returnSecureToken: true

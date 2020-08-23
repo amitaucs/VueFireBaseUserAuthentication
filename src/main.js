@@ -5,7 +5,7 @@ import router from './router'
 import store from './store'
 
 //define url globally
-axios.defaults.baseURL = 'https://vueauthenticationdemo.firebaseio.com/'
+axios.defaults.baseURL = 'https://talkeng.firebaseio.com/'
 //Check it in developer tool-> network-> user
 //axios.defaults.headers.common['Authorization'] = 'some token'
 axios.defaults.headers.get['Accepts'] = 'application/json'
