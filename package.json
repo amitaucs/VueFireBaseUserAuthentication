@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && cp ./index.html dist/index.html"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "fsevents": "^2.1.3",
     "randomstring": "^1.1.5",
     "vue": "^2.4.4",
